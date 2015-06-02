@@ -1,0 +1,18 @@
+
+include ../main.jade
+
++App
+  #container
+    #search
+      .search__button.fl
+        input(id='search__button', type='button', value='Search')
+      span
+        input(id='search__text', type='text')
+    #books.fl.ovf
+    #chapters.fl.ovf
+    #verses.ovf
+  +App_Script
+  script
+    include ../../node_modules/mithril/mithril.min.js
+  script
+    include:ls index.ls

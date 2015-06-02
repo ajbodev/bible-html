@@ -1,0 +1,18 @@
+
+include ../_.jade
+
++App
+  #container
+    #search.fl
+      .search__button.fl
+        input(id='search__button', type='button', value='Search')
+      span
+        input(id='search__text', type='text')
+    #books.fl.ovf
+    #chapters.fl.ovf
+    #verses.ovf
+  +App_Script
+  script
+    include ../../../bower_components/react/react.js
+  script
+    include:ls index.ls

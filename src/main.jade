@@ -1,0 +1,124 @@
+
+mixin App
+  doctype html
+  html
+    head
+      title Bible HTML
+      +App_Style
+    body
+      block
+    
+mixin App_Script
+  script
+    include ../dist/Bible.min.js
+  script
+    :ls
+      app = {}
+
+      app.booknames = 
+        '' 
+        'Gen' 'Exo' 'Lev' 'Num' 'Deu' 'Jos' 'Jud'
+        'Rut' '1Sa' '2Sa' '1Ki' '2Ki' '1Ch' '2Ch'
+        'Ezr' 'Neh' 'Est' 'Job' 'Psa' 'Pro' 'Ecc'
+        'Son' 'Isa' 'Jer' 'Lam' 'Eze' 'Dan' 'Hos'
+        'Joe' 'Amo' 'Oba' 'Jon' 'Mic' 'Nah' 'Hab'
+        'Zep' 'Hag' 'Zec' 'Mal'
+        'Mat' 'Mar' 'Luk' 'Joh' 'Act' 'Rom' '1Co'
+        '2Co' 'Gal' 'Eph' 'Phi' 'Col' '1Th' '2Th'
+        '1Ti' '2Ti' 'Tit' 'Phm' 'Heb' 'Jam' '1Pe'
+        '2Pe' '1Jo' '2Jo' '3Jo' 'Jud' 'Rev'
+
+      app._booknames = 
+        '' 
+        'esis' 'dus' 'iticus' 'bers' 'teronomy' 'hua' 'ges'
+        'h' 'muel' 'muel' 'ngs' 'ngs' 'ronicles' 'ronicles'
+        'a' 'emiah' 'her' '' 'lm' 'verbs' 'lesiastes'
+        'g of Solomon' 'iah' 'emiah' 'entations' 'kiel' 'iel' 'ea'
+        'l' 's' 'diah' 'ah' 'ah' 'um' 'akkuk'
+        'haniah' 'gai' 'hariah' 'achi' 
+        'thew' 'k' 'e' 'n' 's' 'ans' 'rinthians'
+        'rinthians' 'atians' 'esians' 'lippians' 'ossians' 'essalonians' 'essalonians'
+        'mothy' 'mothy' 'us' 'lemon' 'rews' 'es' 'ter'
+        'ter' 'hn' 'hn' 'hn' 'e' 'elation'
+
+mixin App_Style
+  style.
+    html, body, #container, .ember-application {
+      height:      100%;
+      width:       100%;
+      margin:      0px;
+      padding:     0px;
+    }
+    li { list-style-type: none; }
+    ul {
+      font-size:   14px;
+      margin-left: -37px; /* Hackish */
+    }
+    /* Search */
+    #search {
+      min-height:         28px;
+      width:              100%;
+    }
+    #search input[type='button'] {
+      height:      28px;
+      width:       100%;
+    }
+    @media (min-width: 481px) { .search__button { width: 150px; }}
+    @media (max-width: 480px) { .search__button { width: 99px; }}  
+
+    #search input[type='text'] {
+      width:       100%;
+      line-height: 1.7em;
+    }
+    #search span {
+      display:          block;
+      background-color: green;
+      overflow:         hidden;
+    } 
+
+    /* Books */
+    #books { }  
+    @media (min-width: 481px) {
+      #books { width: 105px; }
+      #books li:after { content: attr(data-book); }
+    }
+    @media (max-width: 480px) { #books { width: 53px; }}
+
+    /* Chapters */
+    #chapters {
+      width:            45px;
+    }
+
+    /* Verses */
+    #verses {
+      min-width:        60%; 
+    }
+    
+    #books, #verses, #chapters {
+      /* background-color: lightblue; */
+      height:           95%;
+    }
+
+    /* Helpers */
+    .fl { float: left; }
+    .ovf { overflow-y: scroll; overflow-x: hidden; }
+
+    /* min-width 481px : Tablets, Laptops, .. */
+    /* max-width 480px : Extra Small Devices, Phones */
+    
+    /* Philemon */
+    @media (min-width: 481px) { 
+      li[data-book='lemon']:before { 
+        content: 'Philemon' !important; 
+        color:   black      !important; 
+      }
+    }
+    
+    @media (max-width: 480px) { 
+      li[data-book='lemon']:before { 
+        content: 'Phm'      !important; 
+        color:   black      !important; 
+      }
+    }
+    
+    li[data-book='lemon'] { color: white; }
