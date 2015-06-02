@@ -1,0 +1,41 @@
+
+include ../_.jade
+     
++App
+  script(type='text/x-handlebars', data-template-name='components/bible-html')
+    #container
+      #search.fl
+        .search__button.fl
+          //-input(id='search__button', type='button', value='Search')
+          | <input id='search__button' type='button' value='Search' {{action "search"}}/>
+        span
+          //-input(id='search__text', type='text')
+          | <input id='search__text' type='text' {{bind-attr value="searchText"}}/>
+      #books.fl.ovf
+        ul#book-chapters
+          | {{#each book in books}}
+          li {{book}}
+          | {{/each}}
+      #chapters.fl.ovf
+        ul#chapter-verses
+          | {{#each chapter in chapters}}
+          li {{chapter}}
+          | {{/each}}
+      #verses.ovf
+        ul#verse
+          | {{#each verse in verses}}
+          li {{verse}}
+          | {{/each}}
+  script(type='text/x-handlebars').
+    {{bible-html}} 
+  style.
+    .ember-view {height:100%;width:100%;margin:0px;padding:0px;}
+  +App_Script
+  script
+    include ../../../bower_components/jquery/dist/jquery.min.js
+  script
+    include ../../../bower_components/ember/ember.min.oj.js
+  script
+    include:js(minify) ../../../bower_components/ember/ember-template-compiler.js
+  script
+    include:ls index.ls

@@ -1,0 +1,24 @@
+
+include ../_.jade
+    
++App
+  #container(ng-app='app')
+    #search.fl(ng-controller='search_verses')
+      .search__button.fl
+        input(id='search__button', type='button', ng-click='search_verses()', value='Search')
+      span
+        input(id='search__text', type='text', ng-model='search_text')
+    #books.fl.ovf
+      ul(ng-controller='books')
+        li(ng-repeat='book in books', ng-click='book_chapters(book.id)', data-book='{{::book._book}}') {{::book.book}}
+    #chapters.fl.ovf
+      ul(ng-controller='chapters')
+        li(ng-repeat='chapter in chapters', ng-click='chapter_verses(chapter)') {{::chapter}}
+    #verses.ovf
+      ul(ng-controller='verses')
+        li(ng-repeat='verse in verses') {{::verse}}
+  +App_Script
+  script
+    include ../../../bower_components/angular/angular.min.js
+  script
+    include:ls index.ls
