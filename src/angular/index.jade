@@ -1,5 +1,5 @@
 
-include ../_.jade
+include ../main.jade
     
 +App
   #container(ng-app='app')
@@ -19,6 +19,6 @@ include ../_.jade
         li(ng-repeat='verse in verses') {{::verse}}
   +App_Script
   script
-    include ../../../bower_components/angular/angular.min.js
+    include ../../node_modules/angular/angular.min.js
   script
     include:ls index.ls
