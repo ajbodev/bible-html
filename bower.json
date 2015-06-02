@@ -1,7 +1,7 @@
 {
   "name": "bible-html",
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "dependencies": {
+    "ember": "~1.12.1"
   }
 }

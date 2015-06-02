@@ -2,7 +2,12 @@
 App = Ember.Application.create!
 
 App.BibleHtmlComponent = Ember.Component.extend do
-  books: app.booknames
+  #books: app.booknames
+  books: do ->
+    o = []
+    for i, j in app.booknames
+      if j > 0 then o.push {book: app.booknames[j], _book: app._booknames[j]}
+    o
   book: 0
   chapters: []
   verses: []
@@ -47,8 +52,7 @@ App.BibleHtmlComponent = Ember.Component.extend do
           chapters.push i
         chapters
       'chapter-verses': (book) ->
-        chapter = main.toElement.innerText
-        console.log chapter
+        chapter = main.toElement.
         verses = []
         for verse, id in Bible[book][chapter]
           verses.push app.booknames[book] + ' ' + chapter + ':' + id + ' ' + verse

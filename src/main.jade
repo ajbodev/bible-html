@@ -80,7 +80,8 @@ mixin App_Style
     #books { }  
     @media (min-width: 481px) {
       #books { width: 105px; }
-      #books li:after { content: attr(data-book); }
+      /*#books li:after { content: attr(data-book); } */
+      li:after { content: attr(data-book); }
     }
     @media (max-width: 480px) { #books { width: 53px; }}
 
