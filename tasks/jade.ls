@@ -15,14 +15,13 @@ o.compile = (_o) -> # Compile
     if _o.name then path.basename = _o.name
   .pipe gulp.dest _o.dest
   
-o.watchCompile = (_o) !-> # Watch-Compile
-  gulp.watch [_o.src], [_o.task]
+o.task = (_o) !-> # Watch-Compile
+  _compile = 'compile-' + _o.task
+  gulp.task _compile, -> o.compile _o # Compile task
+  gulp.task 'watch-' + _o.task , [_compile], -> gulp.watch [_o.src], [_compile]
 
-o.taskAll = (namespace, _o) !-> # Generate tasks
+o.taskAll = (_o) !-> # Generate tasks
   for let index, params of _o
-    _compile = 'compile-' + namespace + index
-    gulp.task _compile, -> o.compile params # Compile task
-    gulp.task 'watch-' + namespace + index , [_compile], -> # Watch task
-      (o.watchCompile {src: params.src, task: _compile}) 
+    o.task params
 
 if typeof module == 'object' then module.exports = o

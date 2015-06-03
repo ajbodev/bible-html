@@ -32,7 +32,6 @@ App.BibleHtmlComponent = Ember.Component.extend do
           a++
         results
       input = document.getElementById 'search__text' .value
-      alert input
       @verses = app.search input
   searchText: 'search'
   click: (main) !->
