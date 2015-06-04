@@ -6,16 +6,10 @@ include ../main.jade
     #container
       #search.fl
         .search__button.fl
-          //-input(id='search__button', type='button', value='Search')
           | <input id='search__button' type='button' value='Search' {{action "search"}}/>
         span
-          //-input(id='search__text', type='text')
           | <input id='search__text' type='text' {{bind-attr value="searchText"}}/>
       #books.fl.ovf
-        //ul#book-chapters
-          | {{#each book in books}}
-          li(data-book="{{''}}") {{book}}
-          | {{/each}}
         ul#book-chapters
           | {{#each book in books}}
           li(data-book="{{book._book}}") {{book.book}}
@@ -42,4 +36,4 @@ include ../main.jade
   script
     include:js(minify) ../../bower_components/ember/ember-template-compiler.js
   script
-    include:ls index.ls
+    include:ls app.ls
