@@ -32,9 +32,9 @@ if you want by saving the web page (CTRL-S).
 
 ## Features
 
-* No installation
+* **No installation**
   * Unlike other Bible softwares, no installation is required - you *only* need a web browser
-* Fast
+* **Fast**
   * Check this [link](http://www.smashingmagazine.com/2012/11/writing-fast-memory-efficient-javascript/)
     for an explanation of why Bible HTML is fast
   * The Bible is stored in a 3d array, ~33K in length (but minified) - 
@@ -42,28 +42,30 @@ if you want by saving the web page (CTRL-S).
   * It can also be faster by loading this array in an external script, 
     and relying on the browser to cache it
   * An even better technique is to use indexedb (soon to come)
-* Minimalist
+* **Minimalist**
   * Only what's *absolutely* needed to read and search the scriptures
   * A topmost search input with button
   * 3 columns for books, chapter, verses, like the popular eSword
-* Web-based
+* **Web-based**
   * The web has been one of the fastest advancing pieces of technology that we have
   * Modern frontend web technology (jquery, angular, react, ember, mithril) have made
     developing and consuming apps for the web a much pleasant experience
-* Route-driven
+* **Route-driven**
   * The view layer of the Bible HTML is driven by routes, which are URLs that are 
     'friendly', 'semantic', 'RESTful', 'clean', even 'SEO-friendly'
   * Brings REST API design to Bible software
   * Allows navigation (including back button) and searching from the web browser bar
-* Search
+* **Search**
   * Autosuggest all possible words in the Bible (reads your mind)
   * Advanced search (regex) is possible via prefixing with the @ symbol
-* Mobile-friendly
+* **Mobile-friendly**
   * Works seamlessly on mobile phones, tablets
-* Open source
+* **Open source**
   * MIT License, hosted on Github
     
 ## Alternatives
+
+There are many offline (desktop) and online alternatives to Bible HTML.
 
 ### Desktop
 
@@ -129,21 +131,19 @@ bower install
 Run the gulp task of choice using the following format(s)
 
 ```
-// compile only (run-once)
-gulp compile-[framework]
-// compile then watch (run many times)
-gulp watch-[framework]
+gulp compile-[framework] // compile only (run-once)
+gulp watch-[framework]   // compile then watch (run many times)
 ```
 
 The framework of choice can be:
 
-* jquery - jQuery with director.js
-* angular - Angular.js with ui-router
-* react - React.js with ReactRouter
-* ember - EmberJS (with jQuery and handlebars)
-* mithril - Mithril.js
+* **jquery** - jQuery with director.js
+* **angular** - Angular.js with ui-router
+* **react** - React.js with ReactRouter
+* **ember** - EmberJS (with jQuery and handlebars)
+* **mithril** - Mithril.js
 
-Check the dist/[framework] subfolder(s) for the built Bible.html
+Check the **dist/[framework]** subfolder(s) for the built Bible.html
 
 ### Running tests
 
