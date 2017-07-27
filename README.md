@@ -10,7 +10,7 @@ other than your web browser. This approach allows it to run in almost every devi
 a web browser. 
 
 Bible HTML is built to be a fast and minimalist alternative to most desktop Bible softwares.
-The [default build](http://ajbodev.github.io/Bible.html) is in one HTML file 
+The [default build](https://ajbodev.github.io/Bible.html) is in one HTML file 
 (including the CSS and JS), so it is easily distributable
 and works offline via the file protocol (in addition to standard http).
 
@@ -20,13 +20,11 @@ is possible by appending @ before your search.
 
 ## Usage
 
-You can see it online [here](http://ajbodev.github.io/Bible.html), and then download it 
+You can see it online [here](https://ajbodev.github.io/Bible.html), and then download it 
 if you want by saving the web page (CTRL-S).
 
-<image 
-  src='http://ajbodev.github.io/media/bible-html.jpg' 
-  style=' margin: 0px 20px 0px 0px'>
-</image><br>
+<img src='https://ajbodev.github.io/legacy/media/Bible-html.jpg' style=' margin: 0px 20px 0px 0px'>
+<br>
 
 *Screenshot of Bible HTML*
 
